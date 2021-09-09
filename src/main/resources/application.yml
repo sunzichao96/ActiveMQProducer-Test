@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+    user: admin
+    password: admin
+    pool:
+      enabled: true
+    packages:
+      trust-all: true
+  jms:
+    pub-sub-domain: true
+    template:
+      delivery-mode: persistent
+    cache:
+      session-cache-size: 1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/exercise?serverTimezone=GMT
+    username: root
+    password: mysql
+mybatis-plus:
+  type-aliases-package: com.example.activemqproducer.producer.Po
+  mapper-locations: classpath*:mapper/*Mapper.xml
